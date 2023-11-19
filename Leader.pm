@@ -8,7 +8,6 @@ use Getopt::Std;
 use MARC::File::XML (BinaryEncoding => 'utf8', RecordFormat => 'MARC21');
 use MARC::Leader;
 use MARC::Leader::Print;
-use Data::MARC::Leader;
 
 our $VERSION = 0.01;
 
@@ -287,8 +286,7 @@ L<Class::Utils>,
 L<Getopt::Std>,
 L<MARC::File::XML>,
 L<MARC::Leader>,
-L<MARC::Leader::Print>,
-L<Data::MARC::Leader>.
+L<MARC::Leader::Print>.
 
 =head1 REPOSITORY
 
