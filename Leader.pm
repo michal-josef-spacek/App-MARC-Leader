@@ -112,6 +112,8 @@ Returns 1 for error, 0 for success.
 
 =head1 EXAMPLE
 
+=for comment filename=print_marc_leader_from_marc_xml_file.pl
+
  use strict;
  use warnings;
 
