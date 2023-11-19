@@ -2,7 +2,7 @@ NAME
     marc-leader - Script to decode MARC leader from file or string.
 
 SYNOPSIS
-     marc-count [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+     marc-leader [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
 
 DESCRIPTION
     It supports MARC XML files now.

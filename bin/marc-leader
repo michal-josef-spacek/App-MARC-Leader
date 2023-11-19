@@ -28,7 +28,7 @@ marc-leader - Script to decode MARC leader from file or string.
 
 =head1 SYNOPSIS
 
- marc-count [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+ marc-leader [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
 
 =head1 DESCRIPTION
 
