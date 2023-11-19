@@ -10,7 +10,7 @@ use MARC::Leader;
 use MARC::Leader::Print;
 use Data::MARC::Leader;
 
-our $VERSION = 0.03;
+our $VERSION = 0.01;
 
 # Constructor.
 sub new {
