@@ -19,7 +19,8 @@ if ($OSNAME eq 'MSWin32') {
 	$script =~ s/\\/\//msg;
 }
 my $right_ret = <<"END";
-Usage: $script [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+Usage: $script [-a] [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+	-a			Print with ANSI colors (or use NO_COLOR/COLOR env variables).
 	-d			Don't print description.
 	-f marc_xml_file	MARC XML file.
 	-h			Print help.

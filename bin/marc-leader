@@ -28,7 +28,7 @@ marc-leader - Script to decode MARC leader from file or string.
 
 =head1 SYNOPSIS
 
- marc-leader [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+ marc-leader [-a] [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
 
 =head1 DESCRIPTION
 
@@ -37,6 +37,11 @@ It supports MARC XML files now.
 =head1 ARGUMENTS
 
 =over 8
+
+=item * C<-a>
+
+Print with ANSI colors.
+Or use C<NO_COLOR>/C<COLOR> env variables.
 
 =item * C<-d>
 

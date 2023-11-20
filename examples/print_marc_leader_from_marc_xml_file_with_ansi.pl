@@ -143,6 +143,7 @@ barf($temp_file_fh, decode_base64($marc_xml_example));
 
 # Arguments.
 @ARGV = (
+        '-a',
         '-f',
         $temp_file,
 );
@@ -150,7 +151,7 @@ barf($temp_file_fh, decode_base64($marc_xml_example));
 # Run.
 exit App::MARC::Leader->new->run;
 
-# Output (ANSI colors are used with set COLOR env variable):
+# Output:
 # Record length: 0
 # Record status: New
 # Type of record: Language material
