@@ -137,9 +137,9 @@ Y2FsX2Jhc2U9Q05CPC9zdWJmaWVsZD4KICA8L2RhdGFmaWVsZD4KPC9yZWNvcmQ+Cgo8L2NvbGxl
 Y3Rpb24+Cg==
 END
 
-my ($temp_file, $temp_file_fh) = tempfile();
+my (undef, $temp_file) = tempfile();
 
-barf($temp_file_fh, decode_base64($marc_xml_example));
+barf($temp_file, decode_base64($marc_xml_example));
 
 # Arguments.
 @ARGV = (

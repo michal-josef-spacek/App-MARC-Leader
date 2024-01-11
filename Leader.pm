@@ -255,9 +255,9 @@ Returns 1 for error, 0 for success.
  Y3Rpb24+Cg==
  END
 
- my ($temp_file, $temp_file_fh) = tempfile();
+ my (undef, $temp_file) = tempfile();
 
- barf($temp_file_fh, decode_base64($marc_xml_example));
+ barf($temp_file, decode_base64($marc_xml_example));
 
  # Arguments.
  @ARGV = (
@@ -427,9 +427,9 @@ Returns 1 for error, 0 for success.
  Y3Rpb24+Cg==
  END
 
- my ($temp_file, $temp_file_fh) = tempfile();
+ my (undef, $temp_file) = tempfile();
 
- barf($temp_file_fh, decode_base64($marc_xml_example));
+ barf($temp_file, decode_base64($marc_xml_example));
 
  # Arguments.
  @ARGV = (
