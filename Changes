@@ -1,6 +1,7 @@
 0.03
  - Add test for processing of leader.
  - Fix examples in doc.
+ - Simplify examples in doc.
  - Update copyright years.
 
 0.02 2023-11-20T14:09:54+01:00
