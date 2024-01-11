@@ -64,6 +64,7 @@ sub run {
 	# Print information.
 	print scalar MARC::Leader::Print->new(
 		'mode_ansi' => $self->{'_opts'}->{'a'},
+		'mode_desc' => ! $self->{'_opts'}->{'d'},
 	)->print($leader);
 	print "\n";
 
