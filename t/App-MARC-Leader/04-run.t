@@ -5,9 +5,12 @@ use App::MARC::Leader;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
 use Test::NoWarnings;
 use Test::Output;
+
+# Data dir.
+my $data = File::Object->new->up->dir('data');
 
 # Test.
 @ARGV = (
@@ -34,4 +37,36 @@ stderr_is(
 	},
 	$right_ret,
 	'Run help.',
+);
+
+# Test.
+@ARGV = (
+	'-f',
+	$data->file('ex1.xml')->s,
+);
+$right_ret = <<'END';
+Record length: 0
+Record status: New
+Type of record: Language material
+Bibliographic level: Monograph/Item
+Type of control: No specified type
+Character coding scheme: UCS/Unicode
+Indicator count: Number of character positions used for indicators
+Subfield code count: Number of character positions used for a subfield code (2)
+Base address of data: 0
+Encoding level: Full level
+Descriptive cataloging form: Non-ISBD
+Multipart resource record level: Not specified or not applicable
+Length of the length-of-field portion: Number of characters in the length-of-field portion of a Directory entry (4)
+Length of the starting-character-position portion: Number of characters in the starting-character-position portion of a Directory entry (5)
+Length of the implementation-defined portion: Number of characters in the implementation-defined portion of a Directory entry (0)
+Undefined: Undefined
+END
+stdout_is(
+	sub {
+		App::MARC::Leader->new->run;
+		return;
+	},
+	$right_ret,
+	'Process ex1.xml file.',
 );
