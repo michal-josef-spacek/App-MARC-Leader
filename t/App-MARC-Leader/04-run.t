@@ -5,7 +5,7 @@ use App::MARC::Leader;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Test::Output;
 
@@ -102,4 +102,36 @@ stdout_is(
 	},
 	$right_ret,
 	'Process ex1.xml file (without description).',
+);
+
+# Test.
+@ARGV = (
+	'-d',
+	'     nam a22        4500',
+);
+$right_ret = <<'END';
+Record length: 0
+Record status: n
+Type of record: a
+Bibliographic level: m
+Type of control:  
+Character coding scheme: a
+Indicator count: 2
+Subfield code count: 2
+Base address of data: 0
+Encoding level:  
+Descriptive cataloging form:  
+Multipart resource record level:  
+Length of the length-of-field portion: 4
+Length of the starting-character-position portion: 5
+Length of the implementation-defined portion: 0
+Undefined: 0
+END
+stdout_is(
+	sub {
+		App::MARC::Leader->new->run;
+		return;
+	},
+	$right_ret,
+	'Process leader from string (without description).',
 );
