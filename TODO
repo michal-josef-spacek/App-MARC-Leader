@@ -3,7 +3,8 @@ TODO
 1. Tests.
 2. Add example without description.
 3. Add libxml to ci on Mac?
-4.
+4. Add test for bad MARC XML file.
+5.
 
 Applied
 =======
