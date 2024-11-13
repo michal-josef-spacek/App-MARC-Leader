@@ -36,8 +36,9 @@ sub run {
 		'f' => undef,
 		'h' => 0,
 	};
-	if (! getopts('adf:h', $self->{'_opts'}) || (! $self->{'_opts'}->{'f'}
-		&& @ARGV < 1) || $self->{'_opts'}->{'h'}) {
+	if (! getopts('adf:h', $self->{'_opts'})
+		|| (! $self->{'_opts'}->{'f'} && @ARGV < 1)
+		|| $self->{'_opts'}->{'h'}) {
 
 		print STDERR "Usage: $0 [-a] [-d] [-f marc_xml_file] [-h] [--version] [leader_string]\n";
 		print STDERR "\t-a\t\t\tPrint with ANSI colors (or use NO_COLOR/COLOR env variables).\n";
