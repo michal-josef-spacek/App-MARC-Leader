@@ -1,5 +1,6 @@
 0.06
  - Fix minimal dependency to MARC::Leader.
+ - Rewrite code to use help() function in tests.
 
 0.05 2024-09-18T15:10:27+02:00
  - Fix test running on shell which has set env variable COLOR=1.

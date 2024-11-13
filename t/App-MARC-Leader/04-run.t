@@ -19,20 +19,7 @@ $ENV{'NO_COLOR'} = 1;
 @ARGV = (
 	'-h',
 );
-my $script = abs2rel(File::Object->new->file('04-run.t')->s);
-# XXX Hack for missing abs2rel on Windows.
-if ($OSNAME eq 'MSWin32') {
-	$script =~ s/\\/\//msg;
-}
-my $right_ret = <<"END";
-Usage: $script [-a] [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
-	-a			Print with ANSI colors (or use NO_COLOR/COLOR env variables).
-	-d			Don't print description.
-	-f marc_xml_file	MARC XML file.
-	-h			Print help.
-	--version		Print version.
-	leader_string		MARC Leader string.
-END
+my $right_ret = help();
 stderr_is(
 	sub {
 		App::MARC::Leader->new->run;
@@ -138,3 +125,22 @@ stdout_is(
 	$right_ret,
 	'Process leader from string (without description).',
 );
+
+sub help {
+	my $script = abs2rel(File::Object->new->file('04-run.t')->s);
+	# XXX Hack for missing abs2rel on Windows.
+	if ($OSNAME eq 'MSWin32') {
+		$script =~ s/\\/\//msg;
+	}
+	my $help = <<"END";
+Usage: $script [-a] [-d] [-f marc_xml_file] [-h] [--version] [leader_string]
+	-a			Print with ANSI colors (or use NO_COLOR/COLOR env variables).
+	-d			Don't print description.
+	-f marc_xml_file	MARC XML file.
+	-h			Print help.
+	--version		Print version.
+	leader_string		MARC Leader string.
+END
+
+	return $help;
+}
