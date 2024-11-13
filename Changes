@@ -1,4 +1,5 @@
 0.06
+ - Add tests.
  - Fix minimal dependency to MARC::Leader.
  - Rewrite code to use help() function in tests.
 

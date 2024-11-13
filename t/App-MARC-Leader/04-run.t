@@ -5,9 +5,10 @@ use App::MARC::Leader;
 use English;
 use File::Object;
 use File::Spec::Functions qw(abs2rel);
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 use Test::Output;
+use Test::Warn;
 
 # Data dir.
 my $data = File::Object->new->up->dir('data');
@@ -26,7 +27,34 @@ stderr_is(
 		return;
 	},
 	$right_ret,
-	'Run help.',
+	'Run help (-h).',
+);
+
+# Test.
+@ARGV = ();
+$right_ret = help();
+stderr_is(
+	sub {
+		App::MARC::Leader->new->run;
+		return;
+	},
+	$right_ret,
+	'Run help (no leader).',
+);
+
+# Test.
+@ARGV = (
+	'-x',
+);
+$right_ret = help();
+stderr_is(
+	sub {
+		warning_is { App::MARC::Leader->new->run; } "Unknown option: x\n",
+			'Warning about bad argument';
+		return;
+	},
+	$right_ret,
+	'Run help (-x - bad option).',
 );
 
 # Test.
