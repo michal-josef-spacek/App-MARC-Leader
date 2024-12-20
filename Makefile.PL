@@ -22,7 +22,7 @@ recursive_author_tests('xt');
 requires 'Class::Utils' => 0;
 requires 'Getopt::Std' => 0;
 requires 'MARC::File::XML' => '1.0.4';
-requires 'MARC::Leader' => 0.04;
+requires 'MARC::Leader' => 0.05;
 requires 'MARC::Leader::Print' => 0.04;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-MARC-Leader/issues',
 resources 'homepage' => 'https://github.com/michal-josef-spacek/App-MARC-Leader';
